@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | MF Online Store</title>
+
+    <link rel="stylesheet" href="earbuds.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .cart-section {
+            padding: 70px 8%;
+            min-height: 55vh;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 22px;
+            margin-bottom: 15px;
+            background: #181818;
+            border: 1px solid #292929;
+            border-radius: 9px;
+        }
+
+        .cart-item h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .cart-item p {
+            color: #a6a6a6;
+            font-size: 12px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .quantity-controls button,
+        .remove-btn {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+
+        .quantity-controls button {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            background: #ff7900;
+            color: #101010;
+        }
+
+        .remove-btn {
+            margin-top: 12px;
+            background: transparent;
+            color: #ff7900;
+            font-size: 12px;
+        }
+
+        .cart-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .cart-actions button,
+        .cart-actions a {
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 14px 18px;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .checkout-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .continue-btn {
+            background: #ff7900;
+            color: #101010;
+        }
+
+        .empty-cart {
+            padding: 45px 20px;
+            text-align: center;
+            background: #181818;
+            border: 1px solid #292929;
+            border-radius: 9px;
+        }
+
+        .empty-cart i {
+            color: #ff7900;
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .empty-cart p {
+            color: #a6a6a6;
+            margin: 12px 0 25px;
+        }
+
+        @media (max-width: 600px) {
+            .cart-section {
+                padding: 45px 5%;
+            }
+
+            .cart-item {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .cart-actions {
+                flex-direction: column;
+            }
+
+            .cart-actions button,
+            .cart-actions a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-mf">MF</span>
+            <span class="logo-text">ONLINE STORE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="covers.html">Covers</a>
+            <a href="earbuds.html">Earbuds</a>
+            <a href="powerbanks.html">Power Banks</a>
+            <a href="cart.html" class="active">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart (<span class="cart-count">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <p class="eyebrow">MF ONLINE STORE</p>
+        <h1>Your Shopping <span>Cart</span></h1>
+        <p>Review your selected products before sending your order.</p>
+    </section>
+
+    <main class="cart-section">
+        <div class="section-heading">
+            <h2>My Items</h2>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-actions" id="cart-actions" style="display: none;">
+            <button class="checkout-btn" onclick="sendCartToWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i>
+                Send Order on WhatsApp
+            </button>
+
+            <a href="index.html" class="continue-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Continue Shopping
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="index.html" class="footer-logo">MF ONLINE STORE</a>
+        <p>Phone accessories for every day.</p>
+        <p class="copyright">&copy; 2026 MF Online Store. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+
+    <script>
+        function displayCart() {
+            const cart = getCart();
+            const container = document.getElementById("cart-items");
+            const actions = document.getElementById("cart-actions");
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Explore our store and add your favorite products!</p>
+                        <a href="index.html" class="shop-btn">
+                            Start Shopping
+                        </a>
+                    </div>
+                `;
+
+                actions.style.display = "none";
+                return;
+            }
+
+            actions.style.display = "flex";
+
+            container.innerHTML = cart.map(item => `
+                <article class="cart-item">
+                    <div>
+                        <h3>${escapeCartText(item.name)}</h3>
+                        <p>Price: ${escapeCartText(item.price)}</p>
+
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity('${escapeCartAttribute(item.name)}', -1)">−</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity('${escapeCartAttribute(item.name)}', 1)">+</button>
+                        </div>
+
+                        <button class="remove-btn"
+                            onclick="removeFromCart('${escapeCartAttribute(item.name)}')">
+                            <i class="fa-solid fa-trash"></i> Remove
+                        </button>
+                    </div>
+                </article>
+            `).join("");
+        }
+
+        function escapeCartText(value) {
+            return String(value).replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[char]);
+        }
+
+        function escapeCartAttribute(value) {
+            return String(value)
+                .replace(/\\/g, "\\\\")
+                .replace(/'/g, "\\'")
+                .replace(/\r/g, "\\r")
+                .replace(/\n/g, "\\n");
+        }
+
+        const originalChangeQuantity = changeQuantity;
+        changeQuantity = function(name, amount) {
+            originalChangeQuantity(name, amount);
+            displayCart();
+        };
+
+        const originalRemoveFromCart = removeFromCart;
+        removeFromCart = function(name) {
+            originalRemoveFromCart(name);
+            displayCart();
+        };
+
+        displayCart();
+    </script>
+
+</body>
+</html>

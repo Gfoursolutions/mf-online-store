@@ -1,0 +1,85 @@
+
+@import url("earbuds.css");
+
+/* iPhone model labels */
+.model-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 25px 0 35px;
+}
+
+.model-list span {
+    background: #1c1c1c;
+    border: 1px solid #ff7900;
+    color: #ffffff;
+    padding: 9px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    transition: background 0.2s, color 0.2s;
+}
+
+.model-list span:hover {
+    background: #ff7900;
+    color: #101010;
+}
+
+/* Make the cover inquiry buttons match the earbuds buttons */
+.inquiry-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 5px;
+    background: #ff7900;
+    color: #101010;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.inquiry-btn:hover {
+    background: #ff9b47;
+    transform: translateY(-2px);
+}
+
+/* Keep the floating WhatsApp button */
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px #0008;
+    z-index: 9999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .model-list {
+        justify-content: center;
+    }
+
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        font-size: 29px;
+        right: 16px;
+        bottom: 16px;
+    }
+}

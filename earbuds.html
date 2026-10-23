@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Earbuds | MF Online Store</title>
+
+    <link rel="stylesheet" href="earbuds.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-mf">MF</span>
+            <span class="logo-text">ONLINE STORE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="#earbuds" class="active">Earbuds</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="cart.html">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Cart (<span class="cart-count">0</span>)
+</a>
+        </nav>
+    </header>
+
+    <!-- Page Introduction -->
+    <section class="page-hero">
+        <p class="eyebrow">MF ONLINE STORE</p>
+
+        <h1>Find Your <span>Perfect Earbuds</span></h1>
+
+        <p>
+            Discover wireless earbuds, Bluetooth earphones,
+            and more from your favorite brands.
+        </p>
+
+        <a href="#earbuds" class="shop-btn">
+            Explore Collection <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </section>
+
+    <!-- Products -->
+    <main class="products-section" id="earbuds">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">OUR COLLECTION</p>
+                <h2>All Earbuds</h2>
+            </div>
+
+            <label class="sort-label">
+                Sort by:
+                <select id="sortProducts">
+                    <option value="default">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+           
+<!-- Product 1: Samsung -->
+<article class="product-card" data-price="20" data-name="Samsung Earbuds">
+    <div class="product-image">
+       
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSwdu_3CqgteH7luCEZOObZBjMQBq-noyxojo9cw4ZcuUOuzan_pGj1c1iZu1IbintADVs4sbe5LKhLtKqHdWqYE4uRmrTPvuSBSAoGDN-aUbYD2Ch3iSiyB3rKt1i2sxxvPtq8tGc&usqp=CAc"
+     alt="Samsung earbuds">
+
+    </div>
+
+    <div class="product-info">
+        <p class="product-category">SAMSUNG</p>
+        <h3>Samsung Earbuds</h3>
+
+        <div class="product-bottom">
+            <span class="price">Starting from $5</span>
+            <button class="inquiry-btn"
+    onclick="addToCart('Samsung Earbuds')">
+    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+</button>
+           <a href="https://wa.me/96103611204?text=Hi%2C%20I%27m%20interested%20in%20the%20Samsung%20earbuds."
+   class="inquiry-btn"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i> Ask us
+</a>
+        </div>
+    </div>
+</article>
+
+<!-- Product 2: Apple -->
+<article class="product-card" data-price="25" data-name="Apple AirPods">
+    <div class="product-image">
+      <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQNr1D56e5UPsuaglydUOXXCSc-FAjPq66wxxg-QHlJuN26StkeDEWmdSPbcuVr8cYYcX9mWcWftTaQUdpXrnGmePLUosz-w_qb9Gtbh5L_0PSk8bXZhGJMfZXLqxtzcYIQ-Ldgbzo&usqp=CAc"
+     alt="Apple AirPods">
+    </div>
+
+    <div class="product-info">
+        <p class="product-category">APPLE</p>
+        <h3>Apple AirPods</h3>
+
+        <div class="product-bottom">
+            <span class="price">Starting from $7</span>
+            <button class="inquiry-btn"
+    onclick="addToCart('Apple Earbuds')">
+    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+</button>
+            <a href="https://wa.me/96103611204?text=Hi%2C%20I%27m%20interested%20in%20the%20Apple%20earbuds."
+   class="inquiry-btn"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i> Ask us
+</a>
+        </div>
+    </div>
+</article>
+
+<!-- Product 3: HOCO -->
+<article class="product-card" data-price="10" data-name="HOCO Earbuds">
+    <div class="product-image">
+        <img src="https://www.hocoofficial.com/cdn/shop/files/Scddf47226dc0413cbde1d8b5dfaf5c22U.webp?v=1787147725&width=360"
+     alt="HOCO earbuds">
+    </div>
+
+    <div class="product-info">
+        <p class="product-category">HOCO</p>
+        <h3>HOCO Earbuds</h3>
+
+        <div class="product-bottom">
+            <span class="price">Starting from $10</span>
+            <button class="inquiry-btn"
+    onclick="addToCart('HOCO Earbuds')">
+    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+</button>
+            <a href="https://wa.me/96103611204?text=Hi%2C%20I%27m%20interested%20in%20this%20earbuds%20product."
+    class="inquiry-btn"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i> Ask us
+</a>
+        </div>
+    </div>
+</article>
+
+
+        </div>
+    </main>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner">
+        <div>
+            <p class="eyebrow">NEED HELP?</p>
+            <h2>Not sure which earbuds to choose?</h2>
+            <p>Contact us and we'll help you find the right option.</p>
+        </div>
+
+        <a href="https://wa.me/96103611204" class="btn" target="_blank"><i class="fa-solid fa-arrow-right"></i>
+        Contact Us</a>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="footer-logo">MF ONLINE STORE</a>
+        <p>Phone accessories for every day.</p>
+        <p class="copyright">&copy; 2026 MF Online Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sort products
+        const productGrid = document.getElementById("productGrid");
+        const sortProducts = document.getElementById("sortProducts");
+
+        sortProducts.addEventListener("change", function () {
+            const cards = Array.from(
+                productGrid.querySelectorAll(".product-card")
+            );
+
+            if (this.value === "low") {
+                cards.sort((a, b) =>
+                    Number(a.dataset.price) - Number(b.dataset.price)
+                );
+            } else if (this.value === "high") {
+                cards.sort((a, b) =>
+                    Number(b.dataset.price) - Number(a.dataset.price)
+                );
+            } else if (this.value === "name") {
+                cards.sort((a, b) =>
+                    a.dataset.name.localeCompare(b.dataset.name)
+                );
+            }
+
+            cards.forEach(card => productGrid.appendChild(card));
+        });
+
+        // Ask about a product through WhatsApp
+        // Replace this example number with your store's number.
+        const whatsappNumber = "96103611204";
+
+        document.querySelectorAll(".add-btn").forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const product = this.dataset.product;
+                const message = encodeURIComponent(
+                    "Hello MF Online Store! I'm interested in " + product + ". Could you share the available options and prices?"
+                );
+
+                if (whatsappNumber.includes("X")) {
+                    alert("Please add your WhatsApp number in earbuds.html first.");
+                    return;
+                }
+
+                window.open(
+                    "https://wa.me/" + whatsappNumber + "?text=" + message,
+                    "_blank"
+                );
+            });
+        });
+    </script>
+    <a href="https://wa.me/96103611204"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contact us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+<script src="cart.js"></script>
+</body>
+</html>
