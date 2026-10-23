@@ -1,0 +1,115 @@
+
+/* Chargers page styling */
+
+.products-section {
+    padding: 60px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 2.3rem;
+    margin: 10px 0;
+}
+
+.section-heading h2 span,
+.hero-content h1 span {
+    color: #ff7900;
+}
+
+.eyebrow {
+    color: #ff7900;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #181818;
+    border: 1px solid #303030;
+    border-radius: 12px;
+    padding: 28px 22px;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff7900;
+}
+
+.product-info h3 {
+    margin: 12px 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.product-info p {
+    color: #a6a6a6;
+    line-height: 1.6;
+}
+
+.product-category {
+    color: #ff7900;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.product-info .price {
+    color: #ff7900;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 18px 0;
+}
+
+.add-to-cart {
+    width: 100%;
+    background: #ff7900;
+    color: #101010;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-to-cart:hover {
+    background: #ff9433;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid #303030;
+    color: #a6a6a6;
+}
+
+footer a {
+    color: #ff7900;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .products-section {
+        padding: 40px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
